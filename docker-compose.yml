@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+
+  mongo:
+    image: mongo:7.0
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"        
+    networks: [appnet]
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      PORT: 3000
+      MONGODB_URL: mongodb+srv://furqanjee:furqan321@cluster0.6dozg9x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    ports:
+      - "3000:3000"          
+    depends_on:
+      - mongo
+    networks: [appnet]
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:80"            
+    depends_on:
+      - api
+    networks: [appnet]
+
+volumes:
+  mongo-data:
+
+networks:
+  appnet:
+    driver: bridge

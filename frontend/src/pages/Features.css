@@ -1,0 +1,137 @@
+/* ───────────────────────────────────────────
+   Mini-header (sits right under main top-bar)
+   ─────────────────────────────────────────── */
+.subheader {
+  
+  top: 64px;                    /* height of main top-bar */
+  width: 100%;
+  background: #ffffffee;        /* white with slight transparency */
+  backdrop-filter: blur(6px);   /* glassy blur for nice overlap */
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+  z-index: 900;
+}
+
+/* Back-Home link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #0284c7;               /* sky-600 */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.back-link:hover {
+  color: #0369a1;               /* sky-800 */
+}
+
+.back-icon {
+  font-size: 1.3rem;
+}
+
+/* Title in mini-header */
+.subheader-title {
+  flex: 1;                      /* push it to center */
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;               /* slate-900 */
+}
+
+/* ───────────────────────────────────────────
+   Page body
+   ─────────────────────────────────────────── */
+.page-container {
+  max-width: 900px;
+  margin: 2.5rem auto 4rem;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+/* Intro / outro paragraphs */
+.intro,
+.outro {
+  font-size: 1.125rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Section titles */
+.section-heading {
+  margin: 2.75rem 0 1.25rem;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #075985;              /* sky-900 */
+  position: relative;
+}
+
+.section-heading::after {      /* little colored underline */
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: #38bdf8;         /* sky-400 */
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* Feature list */
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  margin-bottom: 1.25rem;
+  font-size: 1.07rem;
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.feature-list li::before {     /* custom bullet */
+  content: '★';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #facc15;              /* amber-400 */
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+/* kbd styling */
+kbd {
+  background: #e2e8f0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+}
+
+/* ───────────────────────────────────────────
+   Responsive tweaks
+   ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .subheader {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  .subheader-title {
+    text-align: center;
+  }
+  .back-link {
+    justify-content: center;
+  }
+}

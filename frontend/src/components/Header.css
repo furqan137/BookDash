@@ -1,0 +1,32 @@
+/* Header styles */
+.header {
+  background: #0284c7; /* sky-600 */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  color: #e0f2fe; /* light sky */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #bae6fd;
+}
+
+.active-link {
+  border-bottom: 2px solid #bae6fd;
+  padding-bottom: 0.25rem;
+}

@@ -1,0 +1,148 @@
+body {
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Optional floating blurred circles for glassmorphism effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: rgba(99, 102, 241, 0.4);
+  filter: blur(100px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: rgba(236, 72, 153, 0.4);
+  filter: blur(100px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+} 
+
+/* ─────────── Header bar styling ─────────── */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #0284c7;          /* sky-600 */
+  color: #e0f2fe;               /* light sky */
+  box-shadow: 0 2px 12px rgba(2, 132, 199, 0.4);
+  z-index: 1000;
+} 
+
+/* right-side nav */
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #e0f2fe;           /* light sky */
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity .25s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 0.8;
+  border-bottom: 2px solid #bae6fd;
+  padding-bottom: 2px;
+}
+
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Toggle buttons */
+.toggle-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #e0f2fe;
+  border: none;
+  padding: 0.35rem 1.1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.toggle-btn.active {
+  background: #bae6fd;      /* sky-200 */
+  color: #0369a1;           /* sky-800 */
+}
+
+/* ─────────── Main page layout ─────────── */
+.page {
+  padding: 88px 1rem 2rem;  /* top padding = header height + 24px */
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;           /* slate-800 */
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.add-link {
+  display: flex;
+  align-items: center;
+  color: #0369a1;           /* sky-800 */
+  transition: transform 0.2s;
+}
+
+.add-link:hover {
+  transform: scale(1.1);
+}
+
+.add-icon {
+  font-size: 2.3rem;
+}
+
